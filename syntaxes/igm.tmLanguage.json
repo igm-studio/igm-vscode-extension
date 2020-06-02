@@ -1,0 +1,39 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Idle Game Maker",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{ "include": "#comments" },
+		{ "include": "#literals" }
+	],
+	"repository": {
+		"literals": {
+			"patterns": [
+				{
+					"name": "constant.numeric.date",
+					"match": "\\d{1,2}/\\d{1,2}/\\d{1,4}"
+				},
+				{ "name": "constant.numeric", "match": "\\d+%?" }
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "header",
+					"match": "(Let's make a game!|Settings|CSS|Includes|Layout|Buttons|Resources|Buildings|Upgrades|Items|Achievements|Shinies)\\n"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment",
+					"match": "(?<!<)//.*"
+				}
+			]
+		}
+	},
+	"scopeName": "source.igm"
+}
